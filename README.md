@@ -20,6 +20,7 @@ Dubbo-js, using Node.js to embrace the Dubbo ecosystem. See this [Demo](https://
 ## Getting Started
 
 ```
+lerna bootstrap
 yarn add dubbo2.js
 ```
 

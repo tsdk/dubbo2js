@@ -3,7 +3,7 @@ import {argumentMap} from 'interpret-util';
 import {TDubboCallResult, Dubbo} from 'dubbo2.js';
 
 export interface IBasicTypeProvider {
-  testBasicType(request: TypeRequest): TDubboCallResult<TypeRequest>;
+  testBasicType(TypeRequest0: TypeRequest): TDubboCallResult<TypeRequest>;
 }
 
 export const BasicTypeProviderWrapper = {testBasicType: argumentMap};

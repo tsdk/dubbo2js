@@ -1,31 +1,44 @@
 version: '2'
 services:
-  zoo1:
+  zoo:
     image: zookeeper
     restart: always
-    container_name: zoo1
+    hostname: zoo_1
     ports:
-      - '2181:2181'
+      - 2181:2181
     environment:
       ZOO_MY_ID: 1
-      ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=zoo2:2888:3888 server.3=zoo3:2888:3888
-
-  zoo2:
+      ZOO_SERVERS: server.1=0.0.0.0:2888:3888;2181 server.2=zoo_2:2888:3888;2181 server.3=zoo_3:2888:3888;2181
+    volumes:
+      - ./zookeeper/zoo_1/data:/data
+      - ./zookeeper/zoo_1/datalog:/datalog
+      - ./zookeeper/zoo_1/logs:/logs
+    depends_on:
+      - zoo_2
+      - zoo_3
+  zoo_2:
     image: zookeeper
     restart: always
-    container_name: zoo2
+    hostname: zoo_2
     ports:
-      - '2182:2181'
+      - 2182:2181
     environment:
       ZOO_MY_ID: 2
-      ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=zoo2:2888:3888 server.3=zoo3:2888:3888
-
-  zoo3:
+      ZOO_SERVERS: server.1=zoo_1:2888:3888;2181 server.2=0.0.0.0:2888:3888;2181 server.3=zoo_3:2888:3888;2181
+    volumes:
+      - ./zookeeper/zoo_2/data:/data
+      - ./zookeeper/zoo_2/datalog:/datalog
+      - ./zookeeper/zoo_2/logs:/logs
+  zoo_3:
     image: zookeeper
     restart: always
-    container_name: zoo3
+    hostname: zoo_3
     ports:
-      - '2183:2181'
+      - 2183:2181
     environment:
       ZOO_MY_ID: 3
-      ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=zoo2:2888:3888 server.3=zoo3:2888:3888
+      ZOO_SERVERS: server.1=zoo_1:2888:3888;2181 server.2=zoo_2:2888:3888;2181 server.3=0.0.0.0:2888:3888;2181
+    volumes:
+      - ./zookeeper/zoo_3/data:/data
+      - ./zookeeper/zoo_3/datalog:/datalog
+      - ./zookeeper/zoo_3/logs:/logs

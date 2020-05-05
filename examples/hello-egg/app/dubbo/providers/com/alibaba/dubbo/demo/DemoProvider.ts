@@ -4,10 +4,10 @@ import {argumentMap, JavaString} from 'interpret-util';
 import {TDubboCallResult, Dubbo} from 'dubbo2.js';
 
 export interface IDemoProvider {
-  sayHello(name: JavaString): TDubboCallResult<string>;
+  sayHello(String0: JavaString): TDubboCallResult<string>;
   test(): TDubboCallResult<void>;
   echo(): TDubboCallResult<string>;
-  getUserInfo(request: UserRequest): TDubboCallResult<UserResponse>;
+  getUserInfo(UserRequest0: UserRequest): TDubboCallResult<UserResponse>;
 }
 
 export const DemoProviderWrapper = {

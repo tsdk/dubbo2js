@@ -23,9 +23,12 @@ const dubbo = new Dubbo<typeof service>({
   }),
 });
 
+/* for debug
+await dubbo.ready();
+
 dubbo.use(async (ctx, next) => {
   await next();
-  console.log('-providerAttachments-->', ctx.providerAttachments);
+  console.log('-providerAttachments-->', ctx);
 });
 
 dubbo.subscribe({
@@ -33,7 +36,7 @@ dubbo.subscribe({
     console.log(msg);
   },
 });
-
+*/
 export default dubbo;
 
 // dubbo.ready().then(() => {

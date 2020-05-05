@@ -38,3 +38,7 @@ clean-dubbo-invoker:
 	rm -rf ./packages/dubbo-invoker/lib
 	@echo "clean dubbo-invoker successfully 👏\n"
 
+build-dubbo-demo-provider:
+	cd ./java/dubbo-demo && mvn clean install
+	cd ./java/dubbo-demo/dubbo-demo-provider && mvn clean package
+	@echo "build dubbo-demo-provider successfully 👌\n"

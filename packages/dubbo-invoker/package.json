@@ -10,7 +10,8 @@
   "main": "./lib/index.js",
   "types": "./lib/typings/index.d.ts",
   "dependencies": {
-    "debug": "3.1.0"
+    "debug": "3.1.0",
+    "dubbo2.js": "^2.3.9"
   },
   "license": "Apache Licence 2.0"
 }

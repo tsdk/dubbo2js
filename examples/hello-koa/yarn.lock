@@ -225,8 +225,8 @@ type-is@^1.5.5:
     mime-types "~2.1.15"
 
 urijs@^1.19.0:
-  version "1.19.0"
-  resolved "http://registry.npm.taobao.org/urijs/download/urijs-1.19.0.tgz#d8aa284d0e7469703a6988ad045c4cbfdf08ada0"
+  version "1.19.7"
+  resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.19.7.tgz#4f594e59113928fea63c00ce688fb395b1168ab9"
 
 vary@^1.0.0:
   version "1.1.2"
